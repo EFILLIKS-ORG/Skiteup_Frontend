@@ -10,21 +10,29 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {
             label,
             error,
+            id,
             className = '',
             ...props
         },
         ref,
     ) => {
+        const generatedId = useId();
+        const inputId = id || generatedId;
+
         return (
             <div className="flex w-full flex-col gap-[8.81px]">
                 {label && (
-                    <label className="font-['Poppins',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23]">
+                    <label
+                        htmlFor={inputId}
+                        className="font-['Poppins',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23] cursor-pointer"
+                    >
                         {label}
                     </label>
                 )}
 
                 <input
                     ref={ref}
+                    id={inputId}
                     className={`
             h-[38px]
             w-full

@@ -5,3 +5,7 @@ export * from './ui/Checkbox';
 export * from './ui/Radio';
 export * from './ui/Modal';
 export * from './ui/Tabs';
+export * from './ui/Table';
+export * from './ui/Badge';
+export * from './ui/Card';
+export * from './ui/Searchbar';

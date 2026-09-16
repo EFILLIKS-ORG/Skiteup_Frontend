@@ -1,15 +1,6 @@
 import React, { forwardRef } from 'react';
+import type { ButtonProps, ButtonSize, ButtonVariant } from "../../../utils/utils";
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
-
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: ButtonVariant;
-    size?: ButtonSize;
-    loading?: boolean;
-    leftIcon?: React.ReactNode;
-    rightIcon?: React.ReactNode;
-}
 
 const variantStyles: Record<ButtonVariant, string> = {
     primary:

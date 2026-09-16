@@ -1,9 +1,9 @@
+import { Sidebar } from "./layouts/components/Sidebar";
+
 function App() {
-  
   return (
-    <div>
-      <h1>Skiteup</h1>
-      <p>Skiteup Frontend</p>
+    <div className="flex min-h-screen">
+      <Sidebar activeItem="Dashboard" />
     </div>
   );
 }

@@ -1,12 +1,7 @@
 import React, { forwardRef, useId } from 'react';
 import { Check } from 'lucide-react';
+import type { CheckboxProps } from '../../../utils/utils';
 
-export interface CheckboxProps
-    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-    label?: string;
-    error?: string;
-    bordered?: boolean;
-}
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     (
@@ -74,7 +69,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 h-[20px] w-[20px] rounded-[4px] border border-[rgba(0,0,0,0.5)] bg-white
                 transition-all duration-150 flex items-center justify-center
                 peer-focus-visible:ring-2 peer-focus-visible:ring-[#273469] peer-focus-visible:ring-offset-1
-                peer-checked:bg-[#273469] peer-checked:border-[#273469]
+                peer-checked:bg-[#273469] peer-checked:border-[#273469] peer-checked:[&_svg]:opacity-100
                 peer-disabled:bg-gray-100 peer-disabled:cursor-not-allowed
                 group-hover:border-[#273469]
                 ${error ? 'border-red-500' : ''}
@@ -83,7 +78,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                             <Check
                                 size={14}
                                 strokeWidth={3}
-                                className="text-white opacity-0 transition-opacity duration-150 peer-checked:opacity-100 [input:checked~div_&]:opacity-100"
+                                className="text-white opacity-0 transition-opacity duration-150"
                                 aria-hidden="true"
                             />
                         </div>
