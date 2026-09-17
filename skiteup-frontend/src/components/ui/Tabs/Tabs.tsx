@@ -1,16 +1,5 @@
 import React from "react";
-
-export interface TabItem {
-    label: string;
-    value: string;
-}
-
-export interface TabsProps {
-    tabs: TabItem[];
-    activeTab: string;
-    onChange: (value: string) => void;
-    className?: string;
-}
+import type { TabsProps } from "../../../utils/utils";
 
 export const Tabs: React.FC<TabsProps> = ({
     tabs,

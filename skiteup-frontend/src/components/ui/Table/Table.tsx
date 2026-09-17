@@ -1,17 +1,7 @@
 
 import React from "react";
+import type { TableColumn, TableProps } from "../../../utils/utils";
 
-export interface TableColumn<T> {
-    key: keyof T | string;
-    header: string;
-    render?: (row: T) => React.ReactNode;
-}
-
-export interface TableProps<T> {
-    columns: TableColumn<T>[];
-    data: T[];
-    className?: string;
-}
 
 export function Table<T extends Record<string, unknown>>({
     columns,

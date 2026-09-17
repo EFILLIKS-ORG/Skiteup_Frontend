@@ -1,12 +1,5 @@
 import React from "react";
-
-export type BadgeVariant = "missed" | "submitted";
-
-export interface BadgeProps {
-    children: React.ReactNode;
-    variant: BadgeVariant;
-    className?: string;
-}
+import type { BadgeProps, BadgeVariant } from "../../../utils/utils";
 
 export function Badge({
     children,

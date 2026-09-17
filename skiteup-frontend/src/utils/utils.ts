@@ -77,3 +77,23 @@ export interface CardProps {
     className?: string;
     onClick?: () => void;
 }
+
+export interface CheckboxProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+    label?: string;
+    error?: string;
+    bordered?: boolean;
+}
+export interface RadioProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+    label?: React.ReactNode;
+    error?: string;
+    containerClassName?: string;
+}
+export interface SearchBarProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+    placeholder?: string;
+    value?: string;
+    className?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}

@@ -1,5 +1,5 @@
 import React, { forwardRef, useId } from 'react';
-import type { RadioProps } from '../../../types/types';
+import type { RadioProps } from '../../../utils/utils';
 
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(

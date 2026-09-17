@@ -1,13 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
+import type { SearchBarProps } from "../../../utils/utils";
 
-export interface SearchBarProps
-    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
-    placeholder?: string;
-    value?: string;
-    className?: string;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 export const SearchBar: React.FC<SearchBarProps> = ({
     placeholder = "Search by name, reg number, email....",

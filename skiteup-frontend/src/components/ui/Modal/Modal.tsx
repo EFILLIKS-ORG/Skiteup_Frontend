@@ -1,15 +1,7 @@
 import React from 'react';
 import { AlertTriangle } from 'lucide-react';
 import { Button } from '../Button';
-
-export interface ModalProps {
-    open: boolean;
-    onClose: () => void;
-    onConfirm?: () => void;
-    title?: string;
-    description?: string;
-    children?: React.ReactNode;
-}
+import type { ModalProps } from "../../../utils/utils";
 
 export const Modal: React.FC<ModalProps> = ({
     open,
