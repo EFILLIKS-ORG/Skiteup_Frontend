@@ -97,3 +97,145 @@ export interface SearchBarProps
     className?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface EmptyStateProps {
+    icon?: React.ReactNode;
+    title: string;
+    description?: string;
+    action?: React.ReactNode;
+    className?: string;
+}
+
+export interface IconBoxProps {
+    icon: React.ReactNode;
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
+}
+
+export interface confirmDialogProps {
+    open: boolean;
+    title?: String;
+    description?: string;
+    confirmText?: string;
+    cancelText?: string;
+    varient?: 'primary' | 'danger';
+    onConfirm: () => void;
+    onCancel: () => void;
+    children?: React.ReactNode;
+    className?: string;
+}
+export type LoaderSize = 'sm' | 'md' | 'lg';
+
+export interface LoaderProps {
+    size?: LoaderSize;
+    className?: string;
+    label?: string;
+}
+
+export interface PaginationProps {
+    currentPage: number;
+    totalPages: number;
+    onPageChange: (page: number) => void;
+    showPreviousNext?: boolean;
+    previousText?: React.ReactNode;
+    nextText?: React.ReactNode;
+    className?: string;
+}
+
+export type ToastVariant = 'success' | 'error' | 'warning' | 'info';
+
+export interface ToastProps {
+    message: string;
+    variant?: ToastVariant;
+    icon?: React.ReactNode;
+    onClose?: () => void;
+    className?: string;
+}
+
+export interface FileUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface ImageUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface AudioUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface VideoUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
+
+export interface AvatarProps {
+    src?: string;
+    alt?: string;
+    fallback?: React.ReactNode;
+    size?: AvatarSize;
+    className?: string;
+}
+
+export interface TextAreaProps
+    extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+    label?: string;
+    error?: string;
+}
+
+export type NotificationVariant = | 'info' | 'success' | 'warning' | 'error';
+
+export interface NotificationProps {
+    title?: string;
+    message: string;
+    variant?: NotificationVariant;
+    icon?: React.ReactNode;
+    onClose?: () => void;
+    className?: string;
+}
+
+export interface PageHeaderProps {
+    title: string;
+    description?: string;
+    action?: React.ReactNode;
+    backButton?: React.ReactNode;
+    className?: string;
+}
+
+export interface FilterProps {
+    children: React.ReactNode;
+    onApply?: () => void;
+    onReset?: () => void;
+    applyText?: string;
+    resetText?: string;
+    className?: string;
+}
