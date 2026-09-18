@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface SkiteupLogoProps extends React.SVGProps<SVGSVGElement> {
   width?: number | string;
@@ -8,7 +8,7 @@ export interface SkiteupLogoProps extends React.SVGProps<SVGSVGElement> {
 export const SkiteupLogo: React.FC<SkiteupLogoProps> = ({
   width = 181,
   height = 30,
-  className = "",
+  className = '',
   ...props
 }) => {
   return (

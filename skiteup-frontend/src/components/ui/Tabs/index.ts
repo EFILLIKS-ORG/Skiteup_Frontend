@@ -1,2 +1,2 @@
-export { Tabs, default } from "./Tabs";
-export type { TabsProps, TabItem } from "../../../utils/utils";
+export { Tabs, default } from './Tabs';
+export type { TabsProps, TabItem } from '../../../utils/utils';

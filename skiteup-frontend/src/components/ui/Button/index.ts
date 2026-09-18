@@ -1,2 +1,2 @@
 export { Button, default } from './Button';
-export type { ButtonProps, ButtonVariant, ButtonSize } from "../../../utils/utils";
+export type { ButtonProps, ButtonVariant, ButtonSize } from '../../../utils/utils';

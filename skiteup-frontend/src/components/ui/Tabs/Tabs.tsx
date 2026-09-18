@@ -1,15 +1,10 @@
-import React from "react";
-import type { TabsProps } from "../../../utils/utils";
+import React from 'react';
+import type { TabsProps } from '../../../utils/utils';
 
-export const Tabs: React.FC<TabsProps> = ({
-    tabs,
-    activeTab,
-    onChange,
-    className = "",
-}) => {
-    return (
-        <div
-            className={`
+export const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, onChange, className = '' }) => {
+  return (
+    <div
+      className={`
         flex
         h-[36px]
         w-full
@@ -21,16 +16,16 @@ export const Tabs: React.FC<TabsProps> = ({
         px-[10px]
         ${className}
       `}
-        >
-            {tabs.map((tab) => {
-                const isActive = activeTab === tab.value;
+    >
+      {tabs.map((tab) => {
+        const isActive = activeTab === tab.value;
 
-                return (
-                    <button
-                        key={tab.value}
-                        type="button"
-                        onClick={() => onChange(tab.value)}
-                        className={`
+        return (
+          <button
+            key={tab.value}
+            type="button"
+            onClick={() => onChange(tab.value)}
+            className={`
               flex
               h-[35px]
               items-center
@@ -43,18 +38,15 @@ export const Tabs: React.FC<TabsProps> = ({
               font-semibold
               leading-[24px]
               transition-colors
-              ${isActive
-                                ? "border-b border-[#0B3A60] text-[#0B3A60]"
-                                : "text-[rgba(11,58,96,0.5)]"
-                            }
+              ${isActive ? 'border-b border-[#0B3A60] text-[#0B3A60]' : 'text-[rgba(11,58,96,0.5)]'}
             `}
-                    >
-                        {tab.label}
-                    </button>
-                );
-            })}
-        </div>
-    );
+          >
+            {tab.label}
+          </button>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Tabs;
