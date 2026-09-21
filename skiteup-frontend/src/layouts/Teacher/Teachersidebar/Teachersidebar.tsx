@@ -1,33 +1,22 @@
 import React from 'react';
 import {
-  PanelLeft,
-  LayoutDashboard,
-  Users,
-  ClipboardCheck,
-  History,
-  FileText,
-  ShieldAlert,
-  CircleHelp,
-  LogOut,
+    PanelLeft,
+    LayoutDashboard,
+    Users,
+    ClipboardCheck,
+    History,
+    FileText,
+    ShieldAlert,
+    CircleHelp,
+    LogOut,
 } from 'lucide-react';
 import { SkiteupLogo } from '../../../assets/SkiteupLogo';
+import type { TeacherSidebarProps, NavItem } from '../../../utils/utils';
 
-export interface SidebarProps {
-  activeItem?: string;
-  onItemClick?: (item: string) => void;
-  onSignOut?: () => void;
-}
-
-interface NavItem {
-  id: string;
-  label: string;
-  icon: React.ReactNode;
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({
-  activeItem = 'Dashboard',
-  onItemClick,
-  onSignOut,
+export const Sidebar: React.FC<TeacherSidebarProps> = ({
+    activeItem = "Dashboard",
+    onItemClick,
+    onSignOut,
 }) => {
   const navItems: NavItem[] = [
     {

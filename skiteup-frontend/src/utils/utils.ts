@@ -69,6 +69,261 @@ export interface TabsProps {
   className?: string;
 }
 export interface CardProps {
+    title: string;
+    description: string;
+    buttonText: string;
+    icon?: React.ReactNode;
+    className?: string;
+    onClick?: () => void;
+}
+
+export interface CheckboxProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+    label?: string;
+    error?: string;
+    bordered?: boolean;
+}
+export interface RadioProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+    label?: React.ReactNode;
+    error?: string;
+    containerClassName?: string;
+}
+export interface SearchBarProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+    placeholder?: string;
+    value?: string;
+    className?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface EmptyStateProps {
+    icon?: React.ReactNode;
+    title: string;
+    description?: string;
+    action?: React.ReactNode;
+    className?: string;
+}
+
+export interface IconBoxProps {
+    icon: React.ReactNode;
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
+}
+
+export const sizeIconStyles = {
+    sm: 'w-8 h-8 rounded-[7px]',
+    md: 'w-10 h-10 rounded-[8px]',
+    lg: 'w-12 h-12 rounded-[10px]',
+};
+
+
+export interface confirmDialogProps {
+    open: boolean;
+    title?: String;
+    description?: string;
+    confirmText?: string;
+    cancelText?: string;
+    varient?: 'primary' | 'danger';
+    onConfirm: () => void;
+    onCancel: () => void;
+    children?: React.ReactNode;
+    className?: string;
+}
+export type LoaderSize = 'sm' | 'md' | 'lg';
+
+export interface LoaderProps {
+    size?: LoaderSize;
+    className?: string;
+    label?: string;
+}
+
+export const sizeStyles: Record<LoaderSize, string> = {
+    sm: 'h-4 w-4 border-2',
+    md: 'h-6 w-6 border-4',
+    lg: 'h-10 w-10 border-4',
+};
+
+export interface PaginationProps {
+    currentPage: number;
+    totalPages: number;
+    onPageChange: (page: number) => void;
+    showPreviousNext?: boolean;
+    previousText?: React.ReactNode;
+    nextText?: React.ReactNode;
+    className?: string;
+}
+
+export type ToastVariant = 'success' | 'error' | 'warning' | 'info';
+
+export interface ToastProps {
+    message: string;
+    variant?: ToastVariant;
+    icon?: React.ReactNode;
+    onClose?: () => void;
+    className?: string;
+}
+
+export const toastVariantStyles: Record<ToastVariant, string> = {
+    success: 'border-green-200 bg-green-50 text-green-700',
+    error: 'border-red-200 bg-red-50 text-red-700',
+    warning: 'border-yellow-200 bg-yellow-50 text-yellow-700',
+    info: 'border-blue-200 bg-blue-50 text-blue-700',
+};
+
+export interface FileUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface ImageUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface AudioUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export interface VideoUploadProps {
+    accept?: string;
+    multiple?: boolean;
+    disabled?: boolean;
+    label?: string;
+    description?: string;
+    icon?: React.ReactNode;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+}
+
+export type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
+
+export interface AvatarProps {
+    src?: string;
+    alt?: string;
+    fallback?: React.ReactNode;
+    size?: AvatarSize;
+    className?: string;
+}
+
+export const sizeAvatarStyles = {
+    sm: 'w-8 h-8 text-xs',
+    md: 'w-10 h-10 text-sm',
+    lg: 'w-12 h-12 text-base',
+    xl: 'w-16 h-16 text-lg',
+};
+
+export interface TextAreaProps
+    extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+    label?: string;
+    error?: string;
+}
+
+export type NotificationVariant = | 'info' | 'success' | 'warning' | 'error';
+
+export interface NotificationProps {
+    title?: string;
+    message: string;
+    variant?: NotificationVariant;
+    icon?: React.ReactNode;
+    onClose?: () => void;
+    className?: string;
+}
+
+export const variantStyles = {
+    info: 'border-blue-200 bg-blue-50 text-blue-800',
+    success: 'border-green-200 bg-green-50 text-green-800',
+    warning: 'border-yellow-200 bg-yellow-50 text-yellow-800',
+    error: 'border-red-200 bg-red-50 text-red-800',
+};
+
+export interface PageHeaderProps {
+    title: string;
+    description?: string;
+    action?: React.ReactNode;
+    backButton?: React.ReactNode;
+    className?: string;
+}
+
+export interface FilterProps {
+    children: React.ReactNode;
+    onApply?: () => void;
+    onReset?: () => void;
+    applyText?: string;
+    resetText?: string;
+    className?: string;
+}
+
+export interface SkiteupLogoProps extends React.SVGProps<SVGSVGElement> {
+    width?: number | string;
+    height?: number | string;
+}
+
+export interface PageContainerProps {
+    children: React.ReactNode;
+    className?: string;
+}
+
+export interface StudentSidebarProps {
+    activeItem?: string;
+    onItemClick?: (item: string) => void;
+    onSignOut?: () => void;
+    studentInitial?: string;
+}
+
+export interface NavItem {
+    id: string;
+    label: string;
+    icon: React.ReactNode;
+}
+
+export interface StudentHeaderProps {
+    title?: string;
+    subtitle?: string;
+    studentName?: string;
+    userName?: string;
+    regNumber?: string;
+    email?: string;
+    avatarInitial?: string;
+    className?: string;
+}
+
+export interface SidebarProps {
+    activeItem?: string;
+    onItemClick?: (item: string) => void;
+    onSignOut?: () => void;
+}
+
+export interface TeacherSidebarProps {
+    activeItem?: string;
+    onItemClick?: (item: string) => void;
+    onSignOut?: () => void;
+}
+
+export interface HeaderProps {
+    title: string;
+    userName: string;
+    email: string;
+    avatarInitial?: string;
   title: string;
   description: string;
   buttonText: string;
