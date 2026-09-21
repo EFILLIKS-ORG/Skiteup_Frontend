@@ -77,6 +77,13 @@ export interface CardProps {
     onClick?: () => void;
 }
 
+export interface StatCardProps {
+    title: string;
+    value: string | number;
+    icon: React.ReactNode;
+    className?: string;
+}
+
 export interface CheckboxProps
     extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
@@ -324,12 +331,13 @@ export interface HeaderProps {
     userName: string;
     email: string;
     avatarInitial?: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  icon?: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
+    onMenuToggle?: () => void;
+}
+
+export interface InstitutionSidebarProps {
+    activeItem?: string;
+    onItemClick?: (item: string) => void;
+    onSignOut?: () => void;
 }
 
 export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
