@@ -4,7 +4,7 @@ import type { SkiteupLogoProps } from '../utils/utils';
 export const SkiteupLogo: React.FC<SkiteupLogoProps> = ({
   width = 181,
   height = 30,
-  className = "",
+  className = '',
   ...props
 }) => {
   return (
