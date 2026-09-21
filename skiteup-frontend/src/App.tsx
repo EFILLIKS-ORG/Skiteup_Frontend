@@ -19,22 +19,22 @@ import {
 
 function App() {
   // Pagination
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   // DatePicker
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState<string>('');
 
   // Answer
-  const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [selectedAnswer, setSelectedAnswer] = useState<string>('');
 
   // Star Rating
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState<number>(3);
 
   // Switch
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState<boolean>(false);
 
   //Chip
-  const [chips, setChips] = useState(['CSE', 'IT', 'AIDS']);
+  const [chips, setChips] = useState<string[]>(['CSE', 'IT', 'AIDS']);
     const removeChip = (chipToRemove: string) => {
     setChips((previous) =>
       previous.filter((chip) => chip !== chipToRemove),

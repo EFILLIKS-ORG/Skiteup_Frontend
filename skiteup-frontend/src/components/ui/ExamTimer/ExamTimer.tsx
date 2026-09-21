@@ -16,7 +16,7 @@ export const ExamTimer: React.FC<ExamTimerProps> = ({
   onTimeUp,
   className = '',
 }) => {
-  const [seconds, setSeconds] = useState(initialSeconds);
+  const [seconds, setSeconds] = useState<number>(initialSeconds);
 
   useEffect(() => {
     if (seconds <= 0) {

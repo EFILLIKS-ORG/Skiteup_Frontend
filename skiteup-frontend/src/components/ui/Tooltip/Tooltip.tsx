@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { TooltipProps } from '../../../utils/utils';
 
 export const Tooltip: React.FC<TooltipProps> = ({ content, children, position = 'top' }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const positionClass = {
     top: 'bottom-full left-1/2 mb-2 -translate-x-1/2',
