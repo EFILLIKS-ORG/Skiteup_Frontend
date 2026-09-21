@@ -1,16 +1,15 @@
 import React from 'react';
 import {
-    PanelLeft,
     LayoutDashboard,
     Users,
-    ClipboardCheck,
+    ClipboardList,
     History,
     FileText,
     ShieldAlert,
     CircleHelp,
     LogOut,
+    ChevronLeft,
 } from 'lucide-react';
-import { SkiteupLogo } from '../../../assets/SkiteupLogo';
 import type { TeacherSidebarProps, NavItem } from '../../../utils/utils';
 
 export const Sidebar: React.FC<TeacherSidebarProps> = ({
@@ -30,9 +29,9 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
       icon: <Users size={20} strokeWidth={2} />,
     },
     {
-      id: 'Assigned Task',
-      label: 'Assigned Task',
-      icon: <ClipboardCheck size={20} strokeWidth={2} />,
+      id: 'Assigned Tests',
+      label: 'Assigned Tests',
+      icon: <ClipboardList size={20} strokeWidth={2} />,
     },
     {
       id: 'Submitted History',
@@ -57,26 +56,39 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
   ];
 
   return (
-    <aside className="flex h-screen w-[265px] flex-col justify-between border-r border-white/20 bg-[#0B3A60] px-3 py-5 select-none">
+    <aside className="flex h-screen w-[260px] shrink-0 flex-col justify-between border-r border-white/10 bg-[#082944] px-4 py-6 select-none">
       {/* Top Section: Header & Navigation */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         {/* Header (Logo + Collapse Button) */}
-        <div className="flex h-[60px] items-center justify-between border-b border-white/20 px-2 pb-3">
-          <div className="flex items-center">
-            <SkiteupLogo />
+        <div className="flex items-center justify-between px-1">
+          <div className="flex items-center gap-2.5">
+            {/* Logo Emblem */}
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-inner">
+              <span className="text-[9px] font-black tracking-tighter text-white uppercase">SkiteUp</span>
+            </div>
+
+            {/* Logo Text */}
+            <div className="flex flex-col">
+              <span className="text-base font-bold leading-tight tracking-tight text-white">
+                SkiteUp
+              </span>
+              <span className="text-[9px] font-semibold tracking-wider text-white/60 uppercase">
+                TEACHER PORTAL
+              </span>
+            </div>
           </div>
 
           <button
             type="button"
             aria-label="Collapse Sidebar"
-            className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white/70 transition-colors hover:bg-white/20 hover:text-white"
+            className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white/70 transition-colors hover:bg-white/20 hover:text-white cursor-pointer"
           >
-            <PanelLeft size={18} strokeWidth={2} />
+            <ChevronLeft size={16} strokeWidth={2.5} />
           </button>
         </div>
 
-        {/* Navigation Items (Student style .map loop) */}
-        <nav className="flex flex-col gap-1.5 pt-1">
+        {/* Navigation Items */}
+        <nav className="flex flex-col gap-1.5 pt-2">
           {navItems.map((item) => {
             const isActive = activeItem === item.id;
             return (
@@ -84,14 +96,14 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => onItemClick?.(item.id)}
-                className={`flex w-full items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
+                className={`flex w-full items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-white/15 font-semibold text-white shadow-sm'
+                    ? 'bg-white/15 font-semibold text-white shadow-sm backdrop-blur-sm'
                     : 'text-white/70 hover:bg-white/5 hover:text-white'
                 }`}
               >
                 <span className="flex shrink-0 items-center justify-center">{item.icon}</span>
-                <span className="font-['Poppins'] text-[14px]">{item.label}</span>
+                <span className="text-[14px]">{item.label}</span>
               </button>
             );
           })}
@@ -99,14 +111,14 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
       </div>
 
       {/* Bottom Section: Sign Out */}
-      <div className="border-t border-white/20 pt-3">
+      <div className="border-t border-white/10 pt-4">
         <button
           type="button"
           onClick={onSignOut}
-          className="flex w-full items-center gap-3 rounded-xl px-4 py-2.5 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+          className="flex w-full items-center gap-3.5 rounded-xl px-4 py-2.5 text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
         >
           <LogOut size={20} strokeWidth={2} />
-          <span className="font-['Poppins'] text-[14px] font-medium">Sign Out</span>
+          <span className="text-[14px] font-medium">Sign Out</span>
         </button>
       </div>
     </aside>

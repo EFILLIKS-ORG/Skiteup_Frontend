@@ -1,2 +1,2 @@
-export { default as PageHeader } from './PageHeader';
+export { PageHeader, default } from './PageHeader';
 export type { PageHeaderProps } from '../../../utils/utils';

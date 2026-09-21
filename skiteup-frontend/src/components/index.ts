@@ -38,3 +38,6 @@ export * from './ui/Chip';
 export * from './ui/Label';
 export * from './ui/Switch';
 export * from './ui/Divider';
+export * from './ui/AuraBackground';
+export * from './ui/LargeConstellationBackground';
+

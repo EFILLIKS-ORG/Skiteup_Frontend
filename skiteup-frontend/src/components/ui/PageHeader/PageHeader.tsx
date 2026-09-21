@@ -1,6 +1,6 @@
 import type { PageHeaderProps } from '../../../utils/utils';
 
-const PageHeader = ({
+export const PageHeader = ({
     title,
     description,
     action,
@@ -19,12 +19,12 @@ const PageHeader = ({
                 )}
 
                 <div>
-                    <h1 className="text-2xl font-bold text-[#0B3A60]">
+                    <h1 className="text-3xl font-extrabold tracking-tight text-[#0B2545]">
                         {title}
                     </h1>
 
                     {description && (
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1.5 text-sm font-normal text-slate-500">
                             {description}
                         </p>
                     )}

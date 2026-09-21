@@ -106,7 +106,8 @@ export interface EmptyStateProps {
 }
 
 export interface IconBoxProps {
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
+    children?: React.ReactNode;
     size?: 'sm' | 'md' | 'lg';
     className?: string;
 }
@@ -215,21 +216,18 @@ export interface VideoUploadProps {
     className?: string;
 }
 
-export type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
-
 export interface AvatarProps {
-    src?: string;
-    alt?: string;
-    fallback?: React.ReactNode;
-    size?: AvatarSize;
-    className?: string;
+  src?: string;
+  alt?: string;
+  fallback?: React.ReactNode;
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
 }
 
 export const sizeAvatarStyles = {
-    sm: 'w-8 h-8 text-xs',
-    md: 'w-10 h-10 text-sm',
-    lg: 'w-12 h-12 text-base',
-    xl: 'w-16 h-16 text-lg',
+  sm: 'h-8 w-8 text-xs',
+  md: 'h-10 w-10 text-sm',
+  lg: 'h-12 w-12 text-base',
 };
 
 export interface TextAreaProps
@@ -320,45 +318,10 @@ export interface TeacherSidebarProps {
 }
 
 export interface HeaderProps {
-    title: string;
-    userName: string;
-    email: string;
+    title?: string;
+    userName?: string;
+    email?: string;
     avatarInitial?: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  icon?: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-}
-
-export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  label?: string;
-  error?: string;
-  bordered?: boolean;
-}
-export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  label?: React.ReactNode;
-  error?: string;
-  containerClassName?: string;
-}
-export interface SearchBarProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange'
-> {
-  placeholder?: string;
-  value?: string;
-  className?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-/* Pagination*/
-
-export interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-  className?: string;
 }
 
 /* DatePicker*/
