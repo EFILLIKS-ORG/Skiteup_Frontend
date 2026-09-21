@@ -1,15 +1,5 @@
-import React from "react";
-
-export interface StudentHeaderProps {
-    title?: string;
-    subtitle?: string;
-    studentName?: string;
-    userName?: string;
-    regNumber?: string;
-    email?: string;
-    avatarInitial?: string;
-    className?: string;
-}
+import React from 'react';
+import type { StudentHeaderProps } from '../../../utils/utils';
 
 export const StudentHeader: React.FC<StudentHeaderProps> = ({
     title = "Assessments",

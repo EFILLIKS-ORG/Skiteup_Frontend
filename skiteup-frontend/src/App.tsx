@@ -6,10 +6,10 @@ import { Loader } from './components/ui/Loader';
 import { EmptyState } from './components/ui/EmptyState';
 
 function App() {
-    const [open, setOpen] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [open, setOpen] = useState<boolean>(false);
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const totalPages = 12;
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const handleLoading = () => {
         setLoading(true);
         setTimeout(() => {

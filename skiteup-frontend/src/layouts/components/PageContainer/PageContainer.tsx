@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react';
+import type { PageContainerProps } from '../../../utils/utils';
 
-export interface PageContainerProps {
-    children: React.ReactNode;
-    className?: string;
-}
+
 
 export const PageContainer: React.FC<PageContainerProps> = ({
     children,

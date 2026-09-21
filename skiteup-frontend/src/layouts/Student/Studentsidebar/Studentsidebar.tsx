@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
     LayoutDashboard,
     ClipboardList,
@@ -8,19 +8,7 @@ import {
     LogOut,
 } from "lucide-react";
 import { SkiteupLogo } from "../../../assets/SkiteupLogo";
-
-export interface StudentSidebarProps {
-    activeItem?: string;
-    onItemClick?: (item: string) => void;
-    onSignOut?: () => void;
-    studentInitial?: string;
-}
-
-interface NavItem {
-    id: string;
-    label: string;
-    icon: React.ReactNode;
-}
+import type { StudentSidebarProps, NavItem } from '../../../utils/utils';
 
 export const StudentSidebar: React.FC<StudentSidebarProps> = ({
     activeItem = "Assessments",

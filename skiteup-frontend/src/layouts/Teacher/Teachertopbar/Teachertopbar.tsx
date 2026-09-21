@@ -1,9 +1,4 @@
-export interface HeaderProps {
-    title: string;
-    userName: string;
-    email: string;
-    avatarInitial?: string;
-}
+import type { HeaderProps } from '../../../utils/utils';
 
 const Header = ({
     title,

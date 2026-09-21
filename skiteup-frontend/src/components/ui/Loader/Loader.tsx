@@ -1,11 +1,6 @@
-import React from "react";
-import type { LoaderProps, LoaderSize } from "../../../utils/utils";
+import React from 'react';
+import { LoaderProps, LoaderSize, sizeStyles } from "../../../utils/utils";
 
-const sizeStyles: Record<LoaderSize, string> = {
-    sm: 'h-4 w-4 border-2',
-    md: 'h-6 w-6 border-4',
-    lg: 'h-10 w-10 border-4',
-};
 
 export const Loader = ({
     size = 'md',

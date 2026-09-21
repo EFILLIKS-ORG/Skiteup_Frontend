@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
     PanelLeft,
     LayoutDashboard,
@@ -9,22 +9,11 @@ import {
     ShieldAlert,
     CircleHelp,
     LogOut,
-} from "lucide-react";
-import { SkiteupLogo } from "../../../assets/SkiteupLogo";
+} from 'lucide-react';
+import { SkiteupLogo } from '../../../assets/SkiteupLogo';
+import type { TeacherSidebarProps, NavItem } from '../../../utils/utils';
 
-export interface SidebarProps {
-    activeItem?: string;
-    onItemClick?: (item: string) => void;
-    onSignOut?: () => void;
-}
-
-interface NavItem {
-    id: string;
-    label: string;
-    icon: React.ReactNode;
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({
+export const Sidebar: React.FC<TeacherSidebarProps> = ({
     activeItem = "Dashboard",
     onItemClick,
     onSignOut,
