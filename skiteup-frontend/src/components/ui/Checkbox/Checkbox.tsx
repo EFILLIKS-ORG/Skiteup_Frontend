@@ -42,7 +42,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           {label && (
             <span
               className={`
-                font-['Poppins',sans-serif] text-[14px] font-semibold leading-[21px] text-[rgba(0,0,0,0.8)]
+                font-['Geologica',sans-serif] text-[14px] font-semibold leading-[21px] text-[rgba(0,0,0,0.8)]
                 ${disabled ? 'cursor-not-allowed' : ''}
               `}
             >
@@ -86,7 +86,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         </label>
 
         {error && (
-          <span className="text-[12px] text-red-500 font-['Poppins',sans-serif]">{error}</span>
+          <span className="text-[12px] text-red-500 font-['Geologica',sans-serif]">{error}</span>
         )}
       </div>
     );

@@ -36,7 +36,7 @@ export interface InstitutionDashboardData {
 
 export const institutionDashboardData: InstitutionDashboardData = {
   studentLimit: {
-    currentStudents: 130,
+    currentStudents: 20,
     totalStudents: 200,
   },
   subscription: {

@@ -91,7 +91,7 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
                 }`}
               >
                 <span className="flex shrink-0 items-center justify-center">{item.icon}</span>
-                <span className="font-['Poppins'] text-[14px]">{item.label}</span>
+                <span className="font-['Geologica'] text-[14px]">{item.label}</span>
               </button>
             );
           })}
@@ -106,7 +106,7 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
           className="flex w-full items-center gap-3 rounded-xl px-4 py-2.5 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
         >
           <LogOut size={20} strokeWidth={2} />
-          <span className="font-['Poppins'] text-[14px] font-medium">Sign Out</span>
+          <span className="font-['Geologica'] text-[14px] font-medium">Sign Out</span>
         </button>
       </div>
     </aside>

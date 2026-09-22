@@ -4,6 +4,7 @@ import { IconBox, Badge } from '../../../components';
 
 export const InstitutionTopbar = ({
   title = "Institution Control Center",
+  subtitle,
   userName,
   email,
   avatarInitial,
@@ -22,10 +23,17 @@ export const InstitutionTopbar = ({
           <Menu size={20} strokeWidth={2} />
         </button>
 
-        {/* Page Title */}
-        <h1 className="font-[Poppins] text-lg sm:text-xl md:text-2xl font-bold leading-tight text-white truncate">
-          {title}
-        </h1>
+        {/* Page Title & Subtitle */}
+        <div className="flex flex-col justify-center min-w-0">
+          <h1 className="font-[Geologica] text-lg sm:text-xl md:text-2xl font-bold leading-tight text-white truncate">
+            {title}
+          </h1>
+          {subtitle && (
+            <span className="font-[Geologica] text-xs sm:text-sm font-normal leading-normal text-white/60 truncate">
+              {subtitle}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Right Section: Notifications, User, Avatar */}
@@ -40,10 +48,10 @@ export const InstitutionTopbar = ({
 
         {/* User Details - hidden on extra small screens to prevent overflow */}
         <div className="hidden sm:flex h-[45px] flex-col items-end justify-center">
-          <span className="font-[Poppins] text-sm sm:text-base font-semibold leading-snug text-white">
+          <span className="font-[Geologica] text-sm sm:text-base font-semibold leading-snug text-white">
             {userName}
           </span>
-          <span className="font-[Poppins] text-xs sm:text-sm font-medium leading-snug text-white/50">
+          <span className="font-[Geologica] text-xs sm:text-sm font-medium leading-snug text-white/50">
             {email}
           </span>
         </div>

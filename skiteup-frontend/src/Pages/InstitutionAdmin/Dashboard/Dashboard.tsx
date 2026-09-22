@@ -4,7 +4,7 @@ import {
   SubscriptionStatusCard,
   StatCard,
 } from './components';
-import { institutionDashboardData } from '../../../data/InstitutionAdmin/DashboardData';
+import { institutionDashboardData } from '../../../data/institutionadmin/DashboardData';
 
 export const Dashboard: React.FC = () => {
   const { studentLimit, subscription, stats, modules } = institutionDashboardData;
@@ -41,10 +41,10 @@ export const Dashboard: React.FC = () => {
       {/* Bottom Row: Active Modules Section */}
       <section className="flex flex-col gap-4 rounded-2xl border border-[#0B3A60]/10 bg-white p-6 shadow-sm">
         <div className="flex flex-col">
-          <h2 className="font-['Poppins'] text-lg font-bold text-[#0B3A60]">
+          <h2 className="font-['Geologica'] text-lg font-bold text-[#0B3A60]">
             Active Modules
           </h2>
-          <p className="font-['Poppins'] text-xs font-normal text-[#0B3A60]/60">
+          <p className="font-['Geologica'] text-xs font-normal text-[#0B3A60]/60">
             Assigned by Platform Admin
           </p>
         </div>

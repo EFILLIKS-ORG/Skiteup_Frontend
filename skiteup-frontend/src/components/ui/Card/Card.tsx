@@ -20,11 +20,11 @@ export const Card: React.FC<CardProps> = ({
 
       {/* Title & Description */}
       <div className="flex w-full flex-col items-start gap-[5px]">
-        <h3 className="w-full font-['Poppins'] text-[24px] font-semibold leading-[36px] text-[#0B3A60]">
+        <h3 className="w-full font-['Geologica'] text-[24px] font-semibold leading-[36px] text-[#0B3A60]">
           {title}
         </h3>
 
-        <p className="w-full font-['Poppins'] text-[16px] font-semibold leading-[24px] text-[rgba(11,58,96,0.5)]">
+        <p className="w-full font-['Geologica'] text-[16px] font-semibold leading-[24px] text-[rgba(11,58,96,0.5)]">
           {description}
         </p>
       </div>

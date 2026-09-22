@@ -23,10 +23,10 @@ export const StatCard: React.FC<StatCardProps> = ({
 
       {/* Text Container */}
       <div className="flex flex-1 flex-col items-start justify-center min-w-0">
-        <span className="font-['Poppins'] text-[12px] font-medium leading-[18px] text-[#0B3A60]/50 truncate w-full">
+        <span className="font-['Geologica'] text-[12px] font-medium leading-[18px] text-[#0B3A60]/50 truncate w-full">
           {title}
         </span>
-        <span className="font-['Poppins'] text-[16px] font-semibold leading-[24px] text-[#0B3A60] truncate w-full">
+        <span className="font-['Geologica'] text-[16px] font-semibold leading-[24px] text-[#0B3A60] truncate w-full">
           {value}
         </span>
       </div>

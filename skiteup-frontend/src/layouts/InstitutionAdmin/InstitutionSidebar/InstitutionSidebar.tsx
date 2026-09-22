@@ -59,11 +59,6 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
           aria-hidden="true"
         />
       )}
-
-      {/* Sidebar Container:
-          - Mobile: Always full width drawer (w-[265px]), never collapsed
-          - Desktop (lg+): Collapsible between w-[76px] and w-[265px]
-      */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 flex h-full flex-col justify-between border-r border-white/20 bg-[#0B3A60] py-5 select-none transition-all duration-300 ease-in-out lg:static ${
           isCollapsed ? 'w-[265px] lg:w-[76px] px-4 lg:px-2' : 'w-[265px] px-3 sm:px-4'
@@ -137,7 +132,7 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
                   <span className="flex shrink-0 items-center justify-center">{item.icon}</span>
                   {/* Label: Always visible on mobile, hidden on desktop when collapsed */}
                   <span
-                    className={`font-['Poppins'] text-[14px] truncate ${
+                    className={`font-['Geologica'] text-[14px] truncate ${
                       isCollapsed ? 'block lg:hidden' : 'block'
                     }`}
                   >
@@ -166,7 +161,7 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
           >
             <LogOut size={20} strokeWidth={2} className="shrink-0" />
             <span
-              className={`font-['Poppins'] text-[14px] font-medium truncate ${
+              className={`font-['Geologica'] text-[14px] font-medium truncate ${
                 isCollapsed ? 'block lg:hidden' : 'block'
               }`}
             >

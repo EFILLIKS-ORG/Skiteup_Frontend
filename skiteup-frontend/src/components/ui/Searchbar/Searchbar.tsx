@@ -20,7 +20,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full bg-transparent font-['Poppins'] text-[14px] font-normal leading-[21px] text-black outline-none placeholder:text-[rgba(0,0,0,0.5)]"
+        className="w-full bg-transparent font-['Geologica'] text-[14px] font-normal leading-[21px] text-black outline-none placeholder:text-[rgba(0,0,0,0.5)]"
         {...props}
       />
     </div>

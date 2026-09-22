@@ -1,8 +1,8 @@
 import type React from 'react';
 import type { ReactNode } from 'react';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'primary'| 'secondary'| 'tertiary'| 'outline'| 'ghost';
+export type ButtonSize = 'sm'| 'md'| 'lg'| 'secondary'| 'tertiary';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -10,7 +10,34 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   loading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  iconOnly?: boolean;
 }
+
+export const buttonVariantStyles: Record<ButtonVariant, string> = {
+  primary:
+    'bg-[#082944] text-white hover:bg-[#062036] active:bg-[#062036] focus-visible:ring-[#082944]',
+  secondary:
+    'border border-black/40 bg-transparent text-gray-900 hover:bg-black/5 active:bg-black/10 focus-visible:ring-gray-400',
+  tertiary:
+    'bg-[#E7000B] text-white hover:bg-[#C90009] active:bg-[#B80008] focus-visible:ring-[#E7000B]',
+  outline:
+    'border border-[#273469] bg-transparent text-[#273469] hover:bg-[#273469]/5 active:bg-[#273469]/10 focus-visible:ring-[#273469]',
+  ghost:
+    'bg-transparent text-[#273469] hover:bg-[#273469]/5 active:bg-[#273469]/10 focus-visible:ring-[#273469]',
+};
+
+export const buttonSizeStyles: Record<ButtonSize, string> = {
+  sm:
+    'h-[30px] px-3 py-1.5 text-[11px] leading-[14px] rounded-[8px] gap-1.5',
+  md:
+    'h-[35px] px-[20px] py-[10px] text-[12px] leading-[15px] rounded-[10px] gap-[10px]',
+  lg:
+    'h-[42px] px-4 py-3.5 text-sm leading-[21px] rounded-xl gap-2',
+  secondary:
+    'h-[46px] px-[10px] py-[10px] text-sm leading-[21px] rounded-[10px] gap-[5px]',
+  tertiary:
+    'h-[45px] px-[20px] py-[10px] text-sm leading-[21px] rounded-[10px] gap-[10px]',
+};
 
 export type BadgeVariant = 'missed' | 'submitted';
 
@@ -54,6 +81,7 @@ export interface TableColumn<T> {
 export interface TableProps<T> {
   columns: TableColumn<T>[];
   data: T[];
+  emptyMessage?: React.ReactNode;
   className?: string;
 }
 
@@ -328,6 +356,7 @@ export interface TeacherSidebarProps {
 
 export interface HeaderProps {
     title: string;
+    subtitle?: string;
     userName: string;
     email: string;
     avatarInitial?: string;
@@ -517,5 +546,33 @@ export interface SwitchProps {
 
 export interface DividerProps {
   orientation?: 'horizontal' | 'vertical';
+  className?: string;
+}
+
+/* ManageTeacher / Faculty Registry Types */
+
+export interface TeacherItem {
+  id: string;
+  teacherName: string;
+  idNumber: string;
+  password?: string;
+}
+
+export interface ManageTeacherProps {
+  className?: string;
+}
+
+/* ManageStudents / Student Batches Types */
+
+export interface StudentBatchItem {
+  id: string;
+  sNo: number | string;
+  batch: string;
+  department: string;
+  section: string;
+  totalStudents: number | string;
+}
+
+export interface ManageStudentsProps {
   className?: string;
 }

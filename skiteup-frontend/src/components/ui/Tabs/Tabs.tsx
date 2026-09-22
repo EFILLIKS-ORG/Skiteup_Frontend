@@ -33,7 +33,7 @@ export const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, onChange, className
               rounded-[10px]
               px-[10px]
               py-[5px]
-              font-['Poppins',sans-serif]
+              font-['Geologica',sans-serif]
               text-[16px]
               font-semibold
               leading-[24px]

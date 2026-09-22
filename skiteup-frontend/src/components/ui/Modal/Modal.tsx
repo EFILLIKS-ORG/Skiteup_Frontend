@@ -28,12 +28,12 @@ export const Modal: React.FC<ModalProps> = ({
           </div>
 
           {/* Title */}
-          <h2 className="font-['Poppins',sans-serif] text-[20px] font-semibold leading-[30px] text-black">
+          <h2 className="font-['Geologica',sans-serif] text-[20px] font-semibold leading-[30px] text-black">
             {title}
           </h2>
 
           {/* Description */}
-          <p className="w-full text-center font-['Poppins',sans-serif] text-[16px] font-medium leading-[24px] text-[rgba(0,0,0,0.5)]">
+          <p className="w-full text-center font-['Geologica',sans-serif] text-[16px] font-medium leading-[24px] text-[rgba(0,0,0,0.5)]">
             {description}
           </p>
 

@@ -20,9 +20,9 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
     >
       {/* Left section: Title & Subtitle */}
       <div className="flex flex-col justify-center">
-        <h1 className="font-['Poppins'] text-[20px] font-bold leading-tight text-white">{title}</h1>
+        <h1 className="font-['Geologica'] text-[20px] font-bold leading-tight text-white">{title}</h1>
         {subtitle && (
-          <p className="mt-0.5 font-['Poppins'] text-[12px] font-normal text-white/60">
+          <p className="mt-0.5 font-['Geologica'] text-[12px] font-normal text-white/60">
             {subtitle}
           </p>
         )}
@@ -30,7 +30,7 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
 
       {/* Right section: Student Info & Avatar */}
       <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 font-['Poppins'] text-[14px]">
+        <div className="flex items-center gap-2 font-['Geologica'] text-[14px]">
           <span className="font-semibold text-white">{displayName}</span>
           {displayInfo && (
             <>
@@ -42,7 +42,7 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
 
         {/* Avatar Badge */}
         <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 shadow-sm">
-          <span className="font-['Poppins'] text-[12px] font-semibold text-white">
+          <span className="font-['Geologica'] text-[12px] font-semibold text-white">
             {avatarInitial}
           </span>
         </div>

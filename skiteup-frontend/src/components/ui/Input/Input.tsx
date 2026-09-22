@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="font-['Poppins',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23] cursor-pointer"
+            className="font-['Geologica',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23] cursor-pointer"
           >
             {label}
           </label>
@@ -27,7 +27,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             border-[1.10144px]
             border-[rgba(0,0,0,0.1)]
             px-5
-            font-['Poppins',sans-serif]
+            font-['Geologica',sans-serif]
             text-[14px]
             font-normal
             leading-[21px]

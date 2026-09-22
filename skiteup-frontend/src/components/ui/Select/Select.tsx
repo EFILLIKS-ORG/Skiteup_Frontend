@@ -12,7 +12,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="font-['Poppins',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23] cursor-pointer"
+            className="font-['Geologica',sans-serif] text-[16px] font-semibold leading-[24px] text-[#191B23] cursor-pointer"
           >
             {label}
           </label>
@@ -32,7 +32,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               bg-white
               px-5
               pr-12
-              font-['Poppins',sans-serif]
+              font-['Geologica',sans-serif]
               text-[14px]
               font-semibold
               leading-[21px]

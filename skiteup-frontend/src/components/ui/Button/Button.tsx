@@ -1,22 +1,9 @@
 import React, { forwardRef } from 'react';
-import type { ButtonProps, ButtonSize, ButtonVariant } from '../../../utils/utils';
-
-const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    'bg-[#273469] text-white hover:bg-[#1e2952] active:bg-[#172040] focus-visible:ring-[#273469]',
-  secondary:
-    'bg-[#EBF0F9] text-[#273469] hover:bg-[#DDE5F4] active:bg-[#C9D7EE] focus-visible:ring-[#273469]',
-  outline:
-    'border border-[#273469] text-[#273469] bg-transparent hover:bg-[#273469]/5 active:bg-[#273469]/10 focus-visible:ring-[#273469]',
-  ghost:
-    'text-[#273469] bg-transparent hover:bg-[#273469]/5 active:bg-[#273469]/10 focus-visible:ring-[#273469]',
-};
-
-const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'h-[30px] px-3 py-1.5 text-[11px] leading-[14px] rounded-[8px] gap-1.5',
-  md: 'h-[35px] px-[20px] py-[10px] text-[12px] leading-[15px] rounded-[10px] gap-[10px]',
-  lg: 'h-[42px] px-6 py-3 text-[14px] leading-[18px] rounded-[12px] gap-2.5',
-};
+import {
+  ButtonProps,
+  buttonVariantStyles,
+  buttonSizeStyles,
+} from '../../../utils/utils';
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -29,6 +16,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       leftIcon,
       rightIcon,
+      iconOnly = false,
       className = '',
       ...props
     },
@@ -46,9 +34,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           font-['Geologica',sans-serif] font-medium text-center
           transition-colors duration-150 select-none
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-          disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
-          ${variantStyles[variant]}
-          ${sizeStyles[size]}
+          disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50
+          ${buttonVariantStyles[variant]}
+          ${buttonSizeStyles[size]}
           ${className}
         `
           .replace(/\s+/g, ' ')
@@ -57,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <svg
-            className="animate-spin h-3.5 w-3.5 text-current"
+            className="h-3.5 w-3.5 animate-spin text-current"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -80,13 +68,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           leftIcon
         )}
-        <span>{children}</span>
-        {!loading && rightIcon}
+
+        {!iconOnly && <span>{children}</span>}
+
+        {!loading && !iconOnly && rightIcon}
       </button>
     );
   },
 );
-
 Button.displayName = 'Button';
-
 export default Button;

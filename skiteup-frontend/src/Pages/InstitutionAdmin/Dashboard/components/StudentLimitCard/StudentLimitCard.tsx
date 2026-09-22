@@ -17,11 +17,11 @@ export const StudentLimitCard: React.FC<StudentLimitCardProps> = ({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2.5">
           <span className="h-3 w-3 rounded-full bg-amber-400 shadow-sm" />
-          <h3 className="font-['Poppins'] text-[15px] font-semibold text-[#0B3A60]">
+          <h3 className="font-['Geologica'] text-[15px] font-semibold text-[#0B3A60]">
             Student Limit Status
           </h3>
         </div>
-        <span className="font-['Poppins'] text-sm font-medium text-[#0B3A60]/80">
+        <span className="font-['Geologica'] text-sm font-medium text-[#0B3A60]/80">
           {currentStudents} / {totalStudents} Students ({percentage}%)
         </span>
       </div>
@@ -37,7 +37,7 @@ export const StudentLimitCard: React.FC<StudentLimitCardProps> = ({
       </div>
 
       {/* Footer / Caption */}
-      <p className="font-['Poppins'] text-xs font-normal text-[#0B3A60]/60">
+      <p className="font-['Geologica'] text-xs font-normal text-[#0B3A60]/60">
         {remainingSlots} more student registration slots available.
       </p>
     </div>

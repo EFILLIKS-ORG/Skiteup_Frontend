@@ -17,11 +17,11 @@ export const SubscriptionStatusCard: React.FC<SubscriptionStatusCardProps> = ({
       {/* Top row: Title + Status badge */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h3 className="font-['Poppins'] text-[15px] font-semibold text-[#0B3A60]">
+          <h3 className="font-['Geologica'] text-[15px] font-semibold text-[#0B3A60]">
             Subscription Status
           </h3>
         </div>
-        <span className="rounded-md bg-emerald-50 px-2.5 py-0.5 font-['Poppins'] text-xs font-semibold text-[#10B981] border border-emerald-200">
+        <span className="rounded-md bg-emerald-50 px-2.5 py-0.5 font-['Geologica'] text-xs font-semibold text-[#10B981] border border-emerald-200">
           {statusText}
         </span>
       </div>
@@ -34,17 +34,17 @@ export const SubscriptionStatusCard: React.FC<SubscriptionStatusCardProps> = ({
           className="!bg-[#EEF2FF] !rounded-xl"
         />
         <div className="flex flex-col">
-          <span className="font-['Poppins'] text-xl font-bold text-[#0B3A60]">
+          <span className="font-['Geologica'] text-xl font-bold text-[#0B3A60]">
             {daysRemaining} Days Remaining
           </span>
-          <span className="font-['Poppins'] text-xs font-medium text-[#0B3A60]/50">
+          <span className="font-['Geologica'] text-xs font-medium text-[#0B3A60]/50">
             Expires: {expiryDate}
           </span>
         </div>
       </div>
 
       {/* Footer / Description */}
-      <p className="font-['Poppins'] text-xs font-normal leading-relaxed text-[#0B3A60]/60">
+      <p className="font-['Geologica'] text-xs font-normal leading-relaxed text-[#0B3A60]/60">
         {description}
       </p>
     </div>

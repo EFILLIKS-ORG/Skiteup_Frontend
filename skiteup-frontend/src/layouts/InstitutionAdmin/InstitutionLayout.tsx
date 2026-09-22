@@ -11,7 +11,7 @@ export const InstitutionLayout: React.FC<InstitutionLayoutProps> = ({ children }
   const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState<boolean>(false);
 
   // Map route to active sidebar item
-  const getActiveItem = () => {
+  const getActiveItem = (): string => {
     const path = location.pathname;
     if (path.includes('/institution/teachers')) return 'Manage Teachers';
     if (path.includes('/institution/students')) return 'Manage Students';
@@ -19,6 +19,29 @@ export const InstitutionLayout: React.FC<InstitutionLayoutProps> = ({ children }
     if (path.includes('/institution/support')) return 'Support Center';
     return 'Dashboard';
   };
+
+  // Map route to topbar header title & subtitle
+  const getHeaderInfo = (): { title: string; subtitle: string } => {
+    const path = location.pathname;
+    if (path.includes('/institution/teachers')) {
+      return {
+        title: 'Faculty Registrar',
+        subtitle: 'KNCET Control Center',
+      };
+    }
+    if (path.includes('/institution/students')) {
+      return {
+        title: 'Students Registrar',
+        subtitle: 'KNCET Control Center',
+      };
+    }
+    return {
+      title: 'Dashboard',
+      subtitle: 'KNCET Control Center',
+    };
+  };
+
+  const headerInfo = getHeaderInfo();
 
   const handleItemClick = (item: string) => {
     setIsMobileMenuOpen(false);
@@ -64,7 +87,8 @@ export const InstitutionLayout: React.FC<InstitutionLayoutProps> = ({ children }
       <div className="flex flex-1 flex-col overflow-hidden min-w-0">
         {/* Topbar */}
         <InstitutionTopbar
-          title="KNCET Control Center"
+          title={headerInfo.title}
+          subtitle={headerInfo.subtitle}
           userName="VIKASH N"
           email="Administrator"
           avatarInitial="AD"

@@ -73,7 +73,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
           {label && (
             <span
               className={`
-                font-['Poppins',sans-serif] text-[12px] font-semibold leading-[18px] text-[rgba(11,58,96,0.5)]
+                font-['Geologica',sans-serif] text-[12px] font-semibold leading-[18px] text-[rgba(11,58,96,0.5)]
                 transition-colors duration-150
                 group-hover:text-[rgba(11,58,96,0.8)]
                 group-has-[:checked]:text-[#0B3A60]
@@ -86,7 +86,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
         </label>
 
         {error && (
-          <span className="text-[12px] text-red-500 font-['Poppins',sans-serif] pl-[10px]">
+          <span className="text-[12px] text-red-500 font-['Geologica',sans-serif] pl-[10px]">
             {error}
           </span>
         )}

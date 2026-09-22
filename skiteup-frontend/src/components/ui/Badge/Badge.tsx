@@ -17,7 +17,7 @@ export function Badge({ children, variant, className = '' }: BadgeProps) {
         border
         border-[rgba(255,255,255,0.2)]
         px-[5px]
-        font-['Poppins',sans-serif]
+        font-['Geologica',sans-serif]
         text-[12px]
         font-semibold
         leading-[18px]
