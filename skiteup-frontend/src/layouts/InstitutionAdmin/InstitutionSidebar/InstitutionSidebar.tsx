@@ -7,19 +7,10 @@ import {
     ClipboardCheck,
     CircleHelp,
     LogOut,
+    X,
 } from 'lucide-react';
 import { SkiteupLogo } from '../../../assets/SkiteupLogo';
 import type { InstitutionSidebarProps, NavItem } from '../../../utils/utils';
-
-export interface InstitutionSidebarProps {
-  activeItem?: string;
-  onItemClick?: (item: string) => void;
-  onSignOut?: () => void;
-  isOpen?: boolean;
-  onClose?: () => void;
-  isCollapsed?: boolean;
-  onToggleCollapse?: () => void;
-}
 
 export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
   activeItem = "Dashboard",
@@ -69,40 +60,52 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
         />
       )}
 
-      {/* Sidebar Container */}
+      {/* Sidebar Container:
+          - Mobile: Always full width drawer (w-[265px]), never collapsed
+          - Desktop (lg+): Collapsible between w-[76px] and w-[265px]
+      */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 flex h-full flex-col justify-between border-r border-white/20 bg-[#0B3A60] py-5 select-none transition-all duration-300 ease-in-out lg:static ${
-          isCollapsed ? 'w-[76px] px-2' : 'w-[265px] px-3'
+          isCollapsed ? 'w-[265px] lg:w-[76px] px-4 lg:px-2' : 'w-[265px] px-3 sm:px-4'
         } ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Top Section: Header & Navigation */}
         <div className="flex flex-col gap-4">
-          {/* Header (Logo + Collapse Button) */}
-          <div className="flex h-[60px] items-center justify-between border-b border-white/20 px-2 pb-3">
-            {!isCollapsed ? (
-              <div className="flex items-center overflow-hidden">
-                <SkiteupLogo />
-              </div>
-            ) : (
-              <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 font-bold text-white">
-                S
-              </div>
-            )}
+          {/* Header */}
+          <div
+            className={`flex h-[60px] items-center border-b border-white/20 pb-3 ${
+              isCollapsed
+                ? 'justify-between px-2 lg:justify-center lg:px-0'
+                : 'justify-between px-2'
+            }`}
+          >
+            {/* Logo: Visible on mobile (always expanded) and on desktop ONLY when NOT collapsed */}
+            <div
+              className={`items-center overflow-hidden ${
+                isCollapsed ? 'flex lg:hidden' : 'flex'
+              }`}
+            >
+              <SkiteupLogo />
+            </div>
 
-            {/* Desktop Collapse / Mobile Close Button */}
+            {/* Mobile View Close Button (X icon) */}
+            <button
+              type="button"
+              aria-label="Close Menu"
+              onClick={onClose}
+              className="flex lg:hidden h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors shrink-0"
+            >
+              <X size={20} strokeWidth={2} />
+            </button>
+
+            {/* Desktop View Collapse / Expand Toggle Button */}
             <button
               type="button"
               aria-label={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
-              onClick={() => {
-                if (window.innerWidth < 1024) {
-                  onClose?.();
-                } else {
-                  onToggleCollapse?.();
-                }
-              }}
-              className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white/70 transition-colors hover:bg-white/20 hover:text-white shrink-0"
+              onClick={onToggleCollapse}
+              className="hidden lg:flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white/70 transition-colors hover:bg-white/20 hover:text-white shrink-0"
             >
               <PanelLeft size={18} strokeWidth={2} />
             </button>
@@ -124,7 +127,7 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
                     }
                   }}
                   className={`flex w-full items-center gap-3 rounded-xl py-3.5 text-sm font-medium transition-all ${
-                    isCollapsed ? 'justify-center px-2' : 'px-4'
+                    isCollapsed ? 'justify-start px-4 lg:justify-center lg:px-2' : 'px-4'
                   } ${
                     isActive
                       ? 'bg-white/15 font-semibold text-white shadow-sm'
@@ -132,9 +135,14 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
                   }`}
                 >
                   <span className="flex shrink-0 items-center justify-center">{item.icon}</span>
-                  {!isCollapsed && (
-                    <span className="font-['Poppins'] text-[14px] truncate">{item.label}</span>
-                  )}
+                  {/* Label: Always visible on mobile, hidden on desktop when collapsed */}
+                  <span
+                    className={`font-['Poppins'] text-[14px] truncate ${
+                      isCollapsed ? 'block lg:hidden' : 'block'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
                 </button>
               );
             })}
@@ -153,13 +161,17 @@ export const InstitutionSidebar: React.FC<InstitutionSidebarProps> = ({
               }
             }}
             className={`flex w-full items-center gap-3 rounded-xl py-2.5 text-white/80 transition-colors hover:bg-white/5 hover:text-white ${
-              isCollapsed ? 'justify-center px-2' : 'px-4'
+              isCollapsed ? 'justify-start px-4 lg:justify-center lg:px-2' : 'px-4'
             }`}
           >
             <LogOut size={20} strokeWidth={2} className="shrink-0" />
-            {!isCollapsed && (
-              <span className="font-['Poppins'] text-[14px] font-medium truncate">Sign Out</span>
-            )}
+            <span
+              className={`font-['Poppins'] text-[14px] font-medium truncate ${
+                isCollapsed ? 'block lg:hidden' : 'block'
+              }`}
+            >
+              Sign Out
+            </span>
           </button>
         </div>
       </aside>

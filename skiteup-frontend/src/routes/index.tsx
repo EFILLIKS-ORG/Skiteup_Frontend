@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { InstitutionLayout } from '../layouts/InstitutionAdmin';
-import { Dashboard } from '../Pages/InstitutionAdmin/Dashboard';
+import { Dashboard } from '../pages/InstitutionAdmin/Dashboard';
 
 export const AppRoutes: React.FC = () => {
   return (

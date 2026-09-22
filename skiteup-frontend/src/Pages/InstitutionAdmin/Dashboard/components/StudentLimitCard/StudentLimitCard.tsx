@@ -1,10 +1,5 @@
 import React from 'react';
-
-export interface StudentLimitCardProps {
-  currentStudents?: number;
-  totalStudents?: number;
-  className?: string;
-}
+import type { StudentLimitCardProps } from '../../../../../utils/utils';
 
 export const StudentLimitCard: React.FC<StudentLimitCardProps> = ({
   currentStudents = 130,

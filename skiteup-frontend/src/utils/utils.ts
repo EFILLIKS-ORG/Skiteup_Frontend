@@ -338,6 +338,28 @@ export interface InstitutionSidebarProps {
     activeItem?: string;
     onItemClick?: (item: string) => void;
     onSignOut?: () => void;
+    isOpen?: boolean;
+    onClose?: () => void;
+    isCollapsed?: boolean;
+    onToggleCollapse?: () => void;
+}
+
+export interface InstitutionLayoutProps {
+    children?: React.ReactNode;
+}
+
+export interface StudentLimitCardProps {
+    currentStudents?: number;
+    totalStudents?: number;
+    className?: string;
+}
+
+export interface SubscriptionStatusCardProps {
+    daysRemaining?: number;
+    expiryDate?: string;
+    statusText?: string;
+    description?: string;
+    className?: string;
 }
 
 export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {

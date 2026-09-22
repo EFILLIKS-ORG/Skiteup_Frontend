@@ -1,14 +1,7 @@
 import React from 'react';
 import { Activity } from 'lucide-react';
 import { IconBox } from '../../../../../components/ui/IconBox';
-
-export interface SubscriptionStatusCardProps {
-  daysRemaining?: number;
-  expiryDate?: string;
-  statusText?: string;
-  description?: string;
-  className?: string;
-}
+import type { SubscriptionStatusCardProps } from '../../../../../utils/utils';
 
 export const SubscriptionStatusCard: React.FC<SubscriptionStatusCardProps> = ({
   daysRemaining = 320,

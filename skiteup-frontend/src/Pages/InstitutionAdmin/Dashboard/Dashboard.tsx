@@ -4,7 +4,7 @@ import {
   SubscriptionStatusCard,
   StatCard,
 } from './components';
-import { institutionDashboardData } from '../../../Data/InstitutionAdmin/DashboardData';
+import { institutionDashboardData } from '../../../data/InstitutionAdmin/DashboardData';
 
 export const Dashboard: React.FC = () => {
   const { studentLimit, subscription, stats, modules } = institutionDashboardData;

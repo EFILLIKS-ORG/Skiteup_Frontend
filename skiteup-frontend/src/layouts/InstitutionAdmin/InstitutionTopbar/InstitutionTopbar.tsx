@@ -30,19 +30,13 @@ export const InstitutionTopbar = ({
 
       {/* Right Section: Notifications, User, Avatar */}
       <div className="flex items-center justify-end gap-3 sm:gap-6 shrink-0">
-        
         {/* Notification Icon */}
-        <button 
-          type="button" 
-          aria-label="Notifications"
-          className="focus:outline-none"
-        >
-          <IconBox
-            icon={<Bell size={18} strokeWidth={2} />}
-            size="sm"
-            className="!h-9 !w-9 sm:!h-10 sm:!w-10 !rounded-full !bg-white/10 !text-white transition-colors hover:!bg-white/20"
-          />
-        </button>
+        <IconBox
+          icon={<Bell size={18} strokeWidth={2} />}
+          size="sm"
+          className="!h-9 !w-9 sm:!h-10 sm:!w-10 !rounded-full !bg-white/10 !text-white transition-colors hover:!bg-white/20 cursor-pointer"
+        />
+
 
         {/* User Details - hidden on extra small screens to prevent overflow */}
         <div className="hidden sm:flex h-[45px] flex-col items-end justify-center">

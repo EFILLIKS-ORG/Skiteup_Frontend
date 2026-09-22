@@ -2,16 +2,13 @@ import React from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { InstitutionSidebar } from './InstitutionSidebar';
 import { InstitutionTopbar } from './InstitutionTopbar';
-
-export interface InstitutionLayoutProps {
-  children?: React.ReactNode;
-}
+import type { InstitutionLayoutProps } from '../../utils/utils';
 
 export const InstitutionLayout: React.FC<InstitutionLayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState<boolean>(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState<boolean>(false);
 
   // Map route to active sidebar item
   const getActiveItem = () => {
