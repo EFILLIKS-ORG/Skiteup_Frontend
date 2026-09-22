@@ -41,3 +41,4 @@ export * from './ui/Divider';
 export * from './ui/AuraBackground';
 export * from './ui/LargeConstellationBackground';
 export * from './ui/AssessmentModal';
+export * from './ui/OptionCard';

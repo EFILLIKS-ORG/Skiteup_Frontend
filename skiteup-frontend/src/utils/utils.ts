@@ -441,6 +441,16 @@ export interface LabelProps {
   required?: boolean;
   className?: string;
 }
+/*Option card*/
+
+export interface OptionCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  selected?: boolean;
+  onClick?: () => void;
+  className?: string;
+}
 
 /* Switch */
 
@@ -541,4 +551,40 @@ export interface AssessmentModalProps {
 
 export interface WelcomeHeaderProps {
   teacherName: string;
+}
+
+export type McqQuestionInputMethod = 'upload' | 'type';
+
+export interface CreateMcqModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSubmit?: (data: {
+    assessmentName: string;
+    method: McqQuestionInputMethod;
+    file?: File | null;
+  }) => void;
+}
+
+export type LsrwSectionKey = 'listening' | 'speaking' | 'reading' | 'writing';
+
+export interface CreateLsrwModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSubmit?: (data: {
+    assessmentName: string;
+    sections: LsrwSectionKey[];
+  }) => void;
+}
+
+export interface CreateCodingModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSubmit?: (data: {
+    assessmentName: string;
+  }) => void;
+}
+
+export interface SectionOption {
+  key: LsrwSectionKey;
+  label: string;
 }
