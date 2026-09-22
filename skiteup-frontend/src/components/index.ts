@@ -24,7 +24,7 @@ export * from './ui/Notification';
 export * from './ui/PageHeader';
 export * from './ui/Filter';
 
-export * from './ui/Pagination';
+export * from './ui/EmptyState';
 export * from './ui/DatePicker';
 export * from './ui/ExamTimer';
 export * from './ui/QuestionNumber';
@@ -40,4 +40,4 @@ export * from './ui/Switch';
 export * from './ui/Divider';
 export * from './ui/AuraBackground';
 export * from './ui/LargeConstellationBackground';
-
+export * from './ui/AssessmentModal';

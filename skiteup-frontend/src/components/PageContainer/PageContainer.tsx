@@ -1,15 +1,11 @@
 import React from 'react';
 
-import type {
-  ExtendedPageContainerProps,
-} from '../../utils/utils';
+import type { ExtendedPageContainerProps } from '../../utils/utils';
 
 import AuraBackground from '../ui/AuraBackground';
 import LargeConstellationBackground from '../ui/LargeConstellationBackground';
 
-export const PageContainer: React.FC<
-  ExtendedPageContainerProps
-> = ({
+export const PageContainer: React.FC<ExtendedPageContainerProps> = ({
   children,
   className = '',
   showAura = true,
@@ -23,14 +19,10 @@ export const PageContainer: React.FC<
       {showAura && <AuraBackground />}
 
       {/* Large Geometric Constellation Nodes Watermark */}
-      {showConstellation && (
-        <LargeConstellationBackground opacity={0.65} />
-      )}
+      {showConstellation && <LargeConstellationBackground opacity={0.65} />}
 
       {/* Page Content */}
-      <div className="relative z-10 w-full min-h-screen">
-        {children}
-      </div>
+      <div className="relative z-10 w-full min-h-screen">{children}</div>
     </div>
   );
 };

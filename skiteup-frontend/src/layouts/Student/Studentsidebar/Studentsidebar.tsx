@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    LayoutDashboard,
-    ClipboardList,
-    Brain,
-    CircleHelp,
-    ChevronLeft,
-    LogOut,
-} from "lucide-react";
-import { SkiteupLogo } from "../../../assets/SkiteupLogo";
+  LayoutDashboard,
+  ClipboardList,
+  Brain,
+  CircleHelp,
+  ChevronLeft,
+  LogOut,
+} from 'lucide-react';
+import { SkiteupLogo } from '../../../assets/SkiteupLogo';
 import type { StudentSidebarProps, NavItem } from '../../../utils/utils';
 
 export const StudentSidebar: React.FC<StudentSidebarProps> = ({

@@ -47,7 +47,7 @@ body {
   right: -200px;
   background: radial-gradient(
     circle at center,
-    hsla(258, 90%, 85%, 0.40),
+    hsla(258, 90%, 85%, 0.4),
     hsla(258, 90%, 85%, 0.12) 50%,
     transparent 75%
   );
@@ -63,7 +63,7 @@ body {
   background: radial-gradient(
     circle at center,
     hsla(160, 72%, 80%, 0.38),
-    hsla(160, 72%, 80%, 0.10) 50%,
+    hsla(160, 72%, 80%, 0.1) 50%,
     transparent 75%
   );
   filter: blur(100px);
@@ -81,7 +81,7 @@ body {
   left: 25%;
   background: radial-gradient(
     circle at center,
-    hsla(199, 95%, 86%, 0.50),
+    hsla(199, 95%, 86%, 0.5),
     hsla(224, 93%, 94%, 0.15) 55%,
     transparent 80%
   );
@@ -96,7 +96,7 @@ body {
   right: 10%;
   background: radial-gradient(
     circle at center,
-    hsla(326, 78%, 90%, 0.40),
+    hsla(326, 78%, 90%, 0.4),
     hsla(262, 83%, 92%, 0.12) 50%,
     transparent 80%
   );
@@ -112,7 +112,7 @@ body {
   background: radial-gradient(
     circle at center,
     hsla(160, 72%, 80%, 0.35),
-    hsla(199, 95%, 86%, 0.10) 55%,
+    hsla(199, 95%, 86%, 0.1) 55%,
     transparent 80%
   );
   filter: blur(50px);
@@ -130,7 +130,7 @@ body {
   left: 55%;
   background: radial-gradient(
     circle at center,
-    hsla(0, 0%, 100%, 0.60),
+    hsla(0, 0%, 100%, 0.6),
     hsla(204, 94%, 94%, 0.18) 55%,
     transparent 80%
   );
@@ -145,7 +145,7 @@ body {
   left: 18%;
   background: radial-gradient(
     circle at center,
-    hsla(227, 92%, 91%, 0.40),
+    hsla(227, 92%, 91%, 0.4),
     hsla(326, 78%, 90%, 0.12) 50%,
     transparent 80%
   );
@@ -158,11 +158,7 @@ body {
   height: 170px;
   top: 10%;
   right: 22%;
-  background: radial-gradient(
-    circle at center,
-    hsla(187, 92%, 82%, 0.38),
-    transparent 70%
-  );
+  background: radial-gradient(circle at center, hsla(187, 92%, 82%, 0.38), transparent 70%);
   filter: blur(28px);
   animation: auraAccent3 36s ease-in-out infinite;
 }
@@ -185,7 +181,8 @@ body {
    ========================================================= */
 
 @keyframes auraFloat1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0.9;
   }
@@ -207,7 +204,8 @@ body {
 }
 
 @keyframes auraFloat2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0.85;
   }
@@ -229,7 +227,8 @@ body {
 }
 
 @keyframes auraFloat3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0.88;
   }
@@ -251,7 +250,8 @@ body {
 }
 
 @keyframes auraMid1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.9;
   }
@@ -268,7 +268,8 @@ body {
 }
 
 @keyframes auraMid2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0.85;
   }
@@ -285,7 +286,8 @@ body {
 }
 
 @keyframes auraMid3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.8;
   }
@@ -302,7 +304,8 @@ body {
 }
 
 @keyframes auraAccent1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.85;
   }
@@ -314,7 +317,8 @@ body {
 }
 
 @keyframes auraAccent2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.8;
   }
@@ -331,7 +335,8 @@ body {
 }
 
 @keyframes auraAccent3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 0.9;
   }
@@ -402,7 +407,6 @@ body {
     height: 100px;
   }
 }
-
 
 /* Large Constellation Background */
 

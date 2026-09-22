@@ -7,7 +7,6 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
   label = 'Score',
   className = '',
 }) => {
-
   return (
     <div className={`rounded-2xl border border-gray-200 bg-white p-6 text-center ${className}`}>
       <p className="text-sm font-medium text-gray-500">{label}</p>
@@ -16,7 +15,6 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
         {score}
         <span className="text-xl font-medium text-gray-400"> / {total}</span>
       </div>
-
     </div>
   );
 };

@@ -5,13 +5,11 @@ import LargeConstellationBackground from './components/ui/LargeConstellationBack
 function App() {
   return (
     <div className="relative min-h-screen overflow-hidden">
-
       <AuraBackground />
       <LargeConstellationBackground opacity={0.65} />
 
       <div className="relative z-10">
-<Dashboard/>
-
+        <Dashboard />
       </div>
     </div>
   );

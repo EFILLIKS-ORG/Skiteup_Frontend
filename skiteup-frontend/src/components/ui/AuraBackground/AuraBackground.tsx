@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const AuraBackground: React.FC = () => {
   return (
@@ -23,10 +23,7 @@ export const AuraBackground: React.FC = () => {
       <div className="aura-blob aura-l3-c" />
 
       {/* Layer 4 — Grain overlay */}
-      <svg
-        className="aura-grain"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg className="aura-grain" xmlns="http://www.w3.org/2000/svg">
         <filter id="auraNoiseFilter">
           <feTurbulence
             type="fractalNoise"
@@ -37,11 +34,7 @@ export const AuraBackground: React.FC = () => {
           <feColorMatrix type="saturate" values="0" />
         </filter>
 
-        <rect
-          width="100%"
-          height="100%"
-          filter="url(#auraNoiseFilter)"
-        />
+        <rect width="100%" height="100%" filter="url(#auraNoiseFilter)" />
       </svg>
     </div>
   );

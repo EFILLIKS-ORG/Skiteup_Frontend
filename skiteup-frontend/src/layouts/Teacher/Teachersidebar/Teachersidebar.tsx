@@ -12,10 +12,7 @@ import {
 } from 'lucide-react';
 
 import { Button } from '../../../components';
-import type {
-  TeacherSidebarProps,
-  NavItem,
-} from '../../../utils/utils';
+import type { TeacherSidebarProps, NavItem } from '../../../utils/utils';
 
 export const Sidebar: React.FC<TeacherSidebarProps> = ({
   activeItem = 'Dashboard',
@@ -109,10 +106,11 @@ export const Sidebar: React.FC<TeacherSidebarProps> = ({
                 variant="ghost"
                 onClick={() => onItemClick?.(item.id)}
                 leftIcon={item.icon}
-                className={`w-full justify-start rounded-xl px-4 py-3 text-[14px] ${isActive
-                  ? 'bg-white/15 font-semibold text-white shadow-sm backdrop-blur-sm'
-                  : 'bg-transparent font-medium text-white/70 hover:bg-white/5 hover:text-white'
-                  }`}
+                className={`w-full justify-start rounded-xl px-4 py-3 text-[14px] ${
+                  isActive
+                    ? 'bg-white/15 font-semibold text-white shadow-sm backdrop-blur-sm'
+                    : 'bg-transparent font-medium text-white/70 hover:bg-white/5 hover:text-white'
+                }`}
               >
                 {item.label}
               </Button>

@@ -1,12 +1,7 @@
-import PageHeader from "../../../components/ui/PageHeader";
+import PageHeader from '../../../components/ui/PageHeader';
+import type { WelcomeHeaderProps } from '../../../utils/utils';
 
-type WelcomeHeaderProps = {
-  teacherName: string;
-};
-
-const WelcomeHeader = ({
-  teacherName,
-}: WelcomeHeaderProps) => {
+const WelcomeHeader = ({ teacherName }: WelcomeHeaderProps) => {
   return (
     <PageHeader
       title={`Welcome, ${teacherName}`}

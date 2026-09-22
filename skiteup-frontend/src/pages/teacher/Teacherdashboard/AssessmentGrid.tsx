@@ -1,15 +1,15 @@
-import React from "react";
-import { ClipboardList, BookOpen, Code2 } from "lucide-react";
-import AssessmentCard from "./AssessmentCard";
-import { teacherAssessments } from "../../../data/teacher/teacherDashboard";
+import React from 'react';
+import { ClipboardList, BookOpen, Code2 } from 'lucide-react';
+import AssessmentCard from './AssessmentCard';
+import { teacherAssessments } from '../../../data/teacher/teacherDashboard';
 
 const getAssessmentIcon = (id: string) => {
   switch (id) {
-    case "mcq":
+    case 'mcq':
       return <ClipboardList className="w-6 h-6 text-white" strokeWidth={2.2} />;
-    case "lsrw":
+    case 'lsrw':
       return <BookOpen className="w-6 h-6 text-white" strokeWidth={2.2} />;
-    case "coding":
+    case 'coding':
       return <Code2 className="w-6 h-6 text-white" strokeWidth={2.2} />;
     default:
       return null;

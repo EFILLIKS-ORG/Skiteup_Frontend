@@ -1,12 +1,14 @@
 import React from 'react';
-import type { BadgeProps } from '../../../utils/utils';
+import {
+  badgeVariantStyles,
+  type BadgeProps,
+} from '../../../utils/utils';
 
-export function Badge({ children, variant, className = '' }: BadgeProps) {
-  const variantStyles = {
-    missed: 'bg-[rgba(239,37,90,0.0627451)] text-[#EF255A]',
-    submitted: 'bg-[rgba(0,164,63,0.0627451)] text-[#00A43F]',
-  };
-
+export function Badge({
+  children,
+  variant,
+  className = '',
+}: BadgeProps) {
   return (
     <span
       className={`
@@ -22,7 +24,7 @@ export function Badge({ children, variant, className = '' }: BadgeProps) {
         font-semibold
         leading-[18px]
         uppercase
-        ${variantStyles[variant]}
+        ${badgeVariantStyles[variant]}
         ${className}
       `
         .replace(/\s+/g, ' ')

@@ -1,2 +1,2 @@
 export { default as TeacherHeader } from './Teachertopbar';
-export type { HeaderProps as TeacherHeaderProps } from '../../../utils/utils';       
+export type { HeaderProps as TeacherHeaderProps } from '../../../utils/utils';
