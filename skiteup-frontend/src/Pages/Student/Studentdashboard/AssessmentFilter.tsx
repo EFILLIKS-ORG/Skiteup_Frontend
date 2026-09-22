@@ -1,21 +1,38 @@
 import { useState } from "react";
 import { LayoutGrid, List, RefreshCw } from "lucide-react";
 import Button from "../../../components/ui/Button/Button";
-import type { AssessmentFilterType, AssessmentFilterProps } from "../../../utils/utils";
+import type {
+    AssessmentFilterType,
+    AssessmentFilterProps,
+    ViewMode,
+} from "../../../utils/utils";
 
 const AssessmentFilter = ({
     activeFilter: controlledActiveFilter,
     onFilterChange,
+    viewMode: controlledViewMode,
+    onViewModeChange,
+    onRefresh,
 }: AssessmentFilterProps = {}) => {
     const [internalFilter, setInternalFilter] = useState<AssessmentFilterType>("All");
+    const [internalViewMode, setInternalViewMode] = useState<ViewMode>("grid");
 
     const currentFilter = controlledActiveFilter ?? internalFilter;
+    const currentViewMode = controlledViewMode ?? internalViewMode;
 
     const handleFilterChange = (filter: AssessmentFilterType) => {
         if (onFilterChange) {
             onFilterChange(filter);
         } else {
             setInternalFilter(filter);
+        }
+    };
+
+    const handleViewModeChange = (mode: ViewMode) => {
+        if (onViewModeChange) {
+            onViewModeChange(mode);
+        } else {
+            setInternalViewMode(mode);
         }
     };
 
@@ -43,29 +60,45 @@ const AssessmentFilter = ({
 
             {/* Right - Actions */}
             <div className="flex items-center gap-3">
-                <Button
-                    variant="ghost"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5EDF3] text-[#8A9BB2] hover:bg-[#F2F6F9] hover:text-[#0B3A60]"
+                {/* Refresh Button */}
+                <button
+                    type="button"
+                    onClick={onRefresh}
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#E5EDF3] bg-white text-[#8A9BB2] transition-colors hover:bg-[#F2F6F9] hover:text-[#0B3A60]"
                     title="Refresh"
+                    aria-label="Refresh"
                 >
-                    <RefreshCw size={18} />
-                </Button>
+                    <RefreshCw size={17} />
+                </button>
 
-                <Button
-                    variant="ghost"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5EDF3] text-[#0B3A60] hover:bg-[#F2F6F9]"
-                    title="Grid View"
-                >
-                    <LayoutGrid size={18} />
-                </Button>
+                {/* Segmented Grid / List Toggle */}
+                <div className="flex h-10 items-center gap-1 rounded-xl border border-[#E5EDF3] bg-[#F2F6F9] p-1">
+                    <button
+                        type="button"
+                        onClick={() => handleViewModeChange("grid")}
+                        className={`flex h-full w-8 items-center justify-center rounded-lg transition-all ${currentViewMode === "grid"
+                            ? "bg-white text-[#0B3A60] shadow-[0_1px_3px_rgba(11,58,96,0.1)]"
+                            : "text-[#8A9BB2] hover:text-[#0B3A60]"
+                            }`}
+                        title="Grid View"
+                        aria-label="Grid View"
+                    >
+                        <LayoutGrid size={17} />
+                    </button>
 
-                <Button
-                    variant="ghost"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5EDF3] text-[#8A9BB2] hover:bg-[#F2F6F9] hover:text-[#0B3A60]"
-                    title="List View"
-                >
-                    <List size={18} />
-                </Button>
+                    <button
+                        type="button"
+                        onClick={() => handleViewModeChange("list")}
+                        className={`flex h-full w-8 items-center justify-center rounded-lg transition-all ${currentViewMode === "list"
+                            ? "bg-white text-[#0B3A60] shadow-[0_1px_3px_rgba(11,58,96,0.1)]"
+                            : "text-[#8A9BB2] hover:text-[#0B3A60]"
+                            }`}
+                        title="List View"
+                        aria-label="List View"
+                    >
+                        <List size={17} />
+                    </button>
+                </div>
             </div>
         </div>
     );

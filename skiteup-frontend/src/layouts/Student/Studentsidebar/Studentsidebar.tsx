@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-    LayoutDashboard,
-    ClipboardList,
-    Brain,
-    CircleHelp,
-    ChevronLeft,
-    LogOut,
+  LayoutGrid,
+  ClipboardCheck,
+  Brain,
+  CircleHelp,
+  ChevronLeft,
+  LogOut,
 } from "lucide-react";
 import { SkiteupLogo } from "../../../assets/SkiteupLogo";
 import type { StudentSidebarProps, NavItem } from '../../../utils/utils';
 
 export const StudentSidebar: React.FC<StudentSidebarProps> = ({
-  activeItem = 'Assessments',
+  activeItem = 'Dashboard',
   onItemClick,
   onSignOut,
 }) => {
@@ -19,12 +19,12 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
     {
       id: 'Dashboard',
       label: 'Dashboard',
-      icon: <LayoutDashboard size={20} strokeWidth={2} />,
+      icon: <LayoutGrid size={20} strokeWidth={2} />,
     },
     {
       id: 'Assessments',
       label: 'Assessments',
-      icon: <ClipboardList size={20} strokeWidth={2} />,
+      icon: <ClipboardCheck size={20} strokeWidth={2} />,
     },
     {
       id: 'Cognitive Games',
@@ -39,13 +39,16 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
   ];
 
   return (
-    <aside className="flex h-screen w-[265px] flex-col justify-between border-r border-white/20 bg-[#0B3A60] px-3 py-5 select-none">
-      {/* Top section: Header & Navigation */}
-      <div className="flex flex-col gap-4">
-        {/* Header (Logo + Collapse Button) */}
-        <div className="flex h-[60px] items-center justify-between border-b border-white/20 px-2 pb-3">
-          <div className="flex items-center">
-            <SkiteupLogo />
+    <aside className="flex h-screen w-[245px] shrink-0 flex-col justify-between border-r border-white/10 bg-[#082944] px-4 py-6 select-none">
+      {/* Top section: Logo & Navigation */}
+      <div className="flex flex-col">
+        {/* Header (Logo + Subtitle + Collapse Button) */}
+        <div className="flex items-start justify-between px-1">
+          <div>
+            <SkiteupLogo width={128} height={22} />
+            <span className="mt-1.5 block text-[10px] font-bold tracking-[0.24em] text-[#8EA8C3] uppercase">
+              STUDENT PORTAL
+            </span>
           </div>
 
           {/* Collapse Button */}
@@ -54,12 +57,12 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
             aria-label="Collapse Sidebar"
             className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white/70 transition-colors hover:bg-white/20 hover:text-white"
           >
-            <ChevronLeft size={18} strokeWidth={2} />
+            <ChevronLeft size={16} strokeWidth={2.5} />
           </button>
         </div>
 
         {/* Navigation Items */}
-        <nav className="flex flex-col gap-1.5 pt-1">
+        <nav className="flex flex-col gap-2 pt-8">
           {navItems.map((item) => {
             const isActive = activeItem === item.id;
             return (
@@ -67,14 +70,13 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => onItemClick?.(item.id)}
-                className={`flex w-full items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
-                  isActive
-                    ? 'bg-white/15 font-semibold text-white shadow-sm'
-                    : 'text-white/70 hover:bg-white/5 hover:text-white'
-                }`}
+                className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3 text-sm font-medium transition-all ${isActive
+                    ? 'bg-white/10 font-semibold text-white shadow-sm'
+                    : 'text-[#8EA8C3] hover:bg-white/5 hover:text-white'
+                  }`}
               >
                 <span className="flex shrink-0 items-center justify-center">{item.icon}</span>
-                <span className="font-['Poppins'] text-[14px]">{item.label}</span>
+                <span>{item.label}</span>
               </button>
             );
           })}
@@ -82,14 +84,14 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
       </div>
 
       {/* Bottom Section: Sign Out */}
-      <div className="border-t border-white/20 pt-3">
+      <div className="pb-1">
         <button
           type="button"
           onClick={onSignOut}
-          className="flex w-full items-center gap-3 rounded-xl px-4 py-2.5 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+          className="flex w-full items-center gap-3.5 rounded-2xl px-4 py-3 text-sm font-medium text-[#8EA8C3] transition-colors hover:bg-white/5 hover:text-white"
         >
           <LogOut size={20} strokeWidth={2} />
-          <span className="font-['Poppins'] text-[14px] font-medium">Sign Out</span>
+          <span>Sign Out</span>
         </button>
       </div>
     </aside>

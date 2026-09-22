@@ -554,10 +554,14 @@ export interface AssessmentCardProps {
   status?: "live" | "upcoming";
 }
 
+export type ViewMode = "grid" | "list";
+
 export interface AssessmentFilterProps {
   activeFilter?: AssessmentFilterType;
   onFilterChange?: (filter: AssessmentFilterType) => void;
+  viewMode?: ViewMode;
+  onViewModeChange?: (mode: ViewMode) => void;
+  onRefresh?: () => void;
 }
 
-
-export type AssessmentFilterType = "All" | "MCQ" | "Coding" | "LSRW";
+export type AssessmentFilterType = "All" | "MCQ" | "Coding" | "LSRW";

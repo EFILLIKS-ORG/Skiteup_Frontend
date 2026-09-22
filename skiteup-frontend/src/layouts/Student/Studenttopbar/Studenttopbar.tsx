@@ -16,13 +16,13 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
 
   return (
     <header
-      className={`flex h-20 items-center justify-between border-b border-white/10 bg-[#0B3A60] px-8 select-none ${className}`.trim()}
+      className={`flex h-20 items-center justify-between border-b border-white/10 bg-[#082944] px-8 select-none ${className}`.trim()}
     >
       {/* Left section: Title & Subtitle */}
       <div className="flex flex-col justify-center">
         <h1 className="font-['Poppins'] text-[20px] font-bold leading-tight text-white">{title}</h1>
         {subtitle && (
-          <p className="mt-0.5 font-['Poppins'] text-[12px] font-normal text-white/60">
+          <p className="mt-0.5 font-['Poppins'] text-[12px] font-normal text-[#8EA8C3]">
             {subtitle}
           </p>
         )}
@@ -34,8 +34,8 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
           <span className="font-semibold text-white">{displayName}</span>
           {displayInfo && (
             <>
-              <span className="text-white/30">|</span>
-              <span className="font-medium text-white/70">{displayInfo}</span>
+              <span className="text-white/20">|</span>
+              <span className="font-medium text-[#8EA8C3]">{displayInfo}</span>
             </>
           )}
         </div>
