@@ -1,13 +1,7 @@
 import React from "react";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 import { Button } from "../../../components";
-
-type AssessmentCardProps = {
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-    onCreate?: () => void;
-};
+import type { AssessmentCardProps } from "../../../utils/utils";
 
 const AssessmentCard = ({
     title,
@@ -16,7 +10,7 @@ const AssessmentCard = ({
     onCreate,
 }: AssessmentCardProps) => {
     return (
-        <div className="flex flex-col justify-between rounded-3xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow min-h-[320px]">
+        <div className="flex min-h-[320px] flex-col justify-between rounded-3xl border border-gray-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-md">
             <div>
                 {/* Icon */}
                 <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[#082944] text-white shadow-sm">
@@ -24,25 +18,26 @@ const AssessmentCard = ({
                 </div>
 
                 {/* Title */}
-                <h2 className="mt-6 text-2xl font-bold text-gray-900 tracking-tight">
+                <h2 className="mt-6 text-2xl font-bold tracking-tight text-gray-900">
                     {title}
                 </h2>
 
                 {/* Description */}
-                <p className="mt-2 text-sm leading-relaxed text-gray-500 min-h-[48px]">
+                <p className="mt-2 min-h-[48px] text-sm leading-relaxed text-gray-500">
                     {description}
                 </p>
             </div>
 
-            {/* Button */}
             <Button
-  type="button"
-  onClick={onCreate}
-  rightIcon={<ArrowRight size={18} />}
-  className="mt-6 w-full h-[42px] cursor-pointer rounded-xl bg-[#082944] px-4 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#062036] active:scale-[0.99]"
->
-  Create Assessment
-</Button>
+                type="button"
+                onClick={onCreate}
+                variant="primary"
+                size="lg"
+                rightIcon={<ArrowRight size={18} />}
+                className="mt-6 w-full"
+            >
+                Create Assessment
+            </Button>
         </div>
     );
 };
