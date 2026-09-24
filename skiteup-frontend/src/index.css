@@ -2,78 +2,75 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-primary: #25aae1;
+  --color-secondary: #262262;
+  --color-accent: #9f1f63;
 
-    --color-primary: #25AAE1;
-    --color-secondary: #262262;
-    --color-accent: #9F1F63;
+  --color-background: #f2f2f2;
+  --color-cardbg: #ffffff;
 
-    --color-background: #F2F2F2;
-    --color-cardbg: #ffffff;
+  --color-hover-primary: #168fc4;
+  --color-hover-secondary: #211d58;
+  --color-hover-tertiary: #891a54;
 
-    --color-hover-primary: #168FC4;
-    --color-hover-secondary: #211D58;
-    --color-hover-tertiary: #891A54;
+  --color-pressed-primary: #11729f;
+  --color-pressed-secondary: #1b184a;
+  --color-pressed-tertiary: #711544;
 
-    --color-pressed-primary: #11729F;
-    --color-pressed-secondary: #1B184A;
-    --color-pressed-tertiary: #711544;
+  --color-text-primary: #242426;
+  --color-text-secondary: #4f5153;
+  --color-text-tertiary: #84888d;
+  --color-text-placeholder: #b9babc;
+  --color-text-inverse: #ffffff;
 
-    --color-text-primary: #242426;
-    --color-text-secondary: #4F5153;
-    --color-text-tertiary: #84888D;
-    --color-text-placeholder: #B9BABC;
-    --color-text-inverse: #FFFFFF;
+  --color-border: #bbbbbb;
+  --color-border-light: #cbd5e1;
 
-    --color-border: #BBBBBB;
-    --color-border-light: #CBD5E1;
+  --color-success: #009966;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-info: #25aae1;
+  --color-disable: #cbd5e1;
 
-    --color-success: #009966;
-    --color-warning: #F59E0B;
-    --color-error: #DC2626;
-    --color-info: #25AAE1;
-    --color-disable: #CBD5E1;
+  --font-manrope: 'Manrope', sans-serif;
 
-    --font-manrope: "Manrope", sans-serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
 
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-base: 16px;
-    --text-lg: 18px;
-    --text-xl: 20px;
-    --text-2xl: 24px;
-    --text-3xl: 30px;
-    --text-4xl: 36px;
-    --text-5xl: 48px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-    --font-weight-light: 300;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-
-
-    --radius-xs: 3px;
-    --radius-sm: 4px;
-    --radius-md: 7px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-2xl: 20px;
-    --radius-full: 9999px;
-
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 7px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-manrope);
-    background: var(--color-background);
-    color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-manrope);
+  background: var(--color-background);
+  color: var(--color-text-primary);
 }
