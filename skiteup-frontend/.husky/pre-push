@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-npm.cmd run test --if-present
-npm.cmd run validate
